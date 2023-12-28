@@ -4,22 +4,22 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
-@Setter
+
 @Getter
+@Setter
 @Entity
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="user_id")
     long id;
-    String firstname;
-    String lastname;
+    String firstName;
+    String lastName;
     String email;
     String password;
-    LocalDateTime expiredData;
-    @Column(length = 6)
+    LocalDate expiredDate;
     String sixDigitCode;
-
+    String activationCode;
 }
